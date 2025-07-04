@@ -1,0 +1,41 @@
+{
+  "git": {
+    "commitMessage": "chore: release v${version}",
+    "tag": true,
+    "push": true,
+    "requireCleanWorkingDir": true
+  },
+  "npm": {
+    "publish": true,
+    "access": "public"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "autoGenerate": {
+      "changelog": true
+    }
+  },
+  "hooks": {
+    "before:init": ["npm run validate"],
+    "after:bump": "npm run build"
+  },
+  "plugins": {
+    "@release-it/keep-a-changelog": {
+      "filename": "CHANGELOG.md",
+      "header": "# Changelog\n\nAll notable changes to this project will be documented in this file.\n\n",
+      "types": [
+        { "type": "feat", "section": "🚀 Features" },
+        { "type": "fix", "section": "🐛 Bug Fixes" },
+        { "type": "docs", "section": "📚 Documentation" },
+        { "type": "style", "section": "💄 Styles" },
+        { "type": "refactor", "section": "🚜 Refactor" },
+        { "type": "perf", "section": "⚡ Performance Improvements" },
+        { "type": "test", "section": "✅ Tests" },
+        { "type": "build", "section": "📦‍ Build System" },
+        { "type": "ci", "section": "👷 Continuous Integration" },
+        { "type": "chore", "section": "⚙️ Miscellaneous Tasks" }
+      ]
+    }
+  }
+}
