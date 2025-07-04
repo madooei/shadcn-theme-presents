@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.2.0] - 2025-07-04
 
 - Add package-lock.json for shadcn-theme-presets
 - Add initial documentation and configuration files for shadcn-theme-presets
