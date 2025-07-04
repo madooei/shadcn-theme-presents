@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "path": "docs"
+    },
+    {
+      "path": "packages/shadcn-theme-presets"
+    },
+    {
+      "path": "examples/basic"
+    },
+    {
+      "path": "examples/with-theme-preset-selector"
+    }
+  ],
+  "settings": {
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "workbench.preferredLightColorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Dark+",
+    "window.autoDetectColorScheme": true,
+    "window.zoomLevel": 1,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.lineHeight": 1.8,
+    "terminal.integrated.fontFamily": "MonoLisa",
+    "git.openRepositoryInParentFolders": "always"
+  }
+}
