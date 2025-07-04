@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Current Script",
+      "type": "node",
+      "request": "launch",
+      // Debug current file
+      "program": "${file}",
+      // Path to tsx binary (Assuming locally installed)
+      "runtimeExecutable": "tsx",
+      "runtimeArgs": ["--no-warnings"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "${workspaceFolder}/node_modules/**"]
+    }
+  ]
+}
