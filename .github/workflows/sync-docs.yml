@@ -1,0 +1,43 @@
+name: Sync Documentation
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'packages/example-package/README.md'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Sync README to docs
+        run: |
+          # Copy the package README to docs/index.md
+          cp packages/example-package/README.md docs/index.md
+          
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit and push changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/index.md
+          git commit -m "docs: sync README to docs/index.md [skip ci]"
+          git push
