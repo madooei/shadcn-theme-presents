@@ -1,6 +1,6 @@
 {
   "name": "@madooei/shadcn-theme-presets",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A React TypeScript package for CRUD UI components, built with Tailwind CSS and shadcn/ui.",
   "keywords": [
     "react",
