@@ -2,8 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-
-
 ## [0.2.1](https://github.com/madooei/shadcn-theme-presets/compare/0.2.0...0.2.1) (2025-07-27)
 
 # Changelog
